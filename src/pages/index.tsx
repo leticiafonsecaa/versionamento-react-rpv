@@ -49,7 +49,7 @@ export default function Home() {
     <div className="p-8 flex flex-col gap-4">
       {exercises.map((exercise) => (
         <Link key={exercise.id} href={`/exercicio-${exercise.id}`}>
-          <div className="p-8 flex rounded-md border border-zinc-300">
+          <div className="border border-gray-700 rounded-xl p-6 w-[500px]">
             <h2>{exercise.title}</h2>
             <p>{exercise.description}</p>
           </div>

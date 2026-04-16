@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Link from "next/link";
 
 export default function Ex07() {
   const [task, setTask] = useState("");
@@ -18,6 +19,9 @@ export default function Ex07() {
 
   return (
     <div className="p-8 flex flex-col gap-4">
+      <Link href="/" className="w-fit border px-4 py-2 rounded">
+        Voltar
+      </Link>
       <h1>Exercício 07</h1>
 
       <input
@@ -28,14 +32,20 @@ export default function Ex07() {
         onChange={(e) => setTask(e.target.value)}
       />
 
-      <button onClick={addTask} className="p-2 content rounded-md border border-zinc-300">
+      <button
+        onClick={addTask}
+        className="p-2 content rounded-md border border-zinc-300"
+      >
         Adicionar
       </button>
 
       {list.map((item, index) => (
         <div key={index}>
           <p>{item}</p>
-          <button onClick={() => removeTask(index)} className="p-2 content rounded-md border border-zinc-300">
+          <button
+            onClick={() => removeTask(index)}
+            className="p-2 content rounded-md border border-zinc-300"
+          >
             Remover
           </button>
         </div>

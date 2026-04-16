@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Link from "next/link";
 
 export default function Ex02() {
     const [count, setCount] = useState(0);
@@ -18,6 +19,8 @@ export default function Ex02() {
 
     return(
         <div className="p-8 flex flex-col gap-4">
+            <Link href="/" className="w-fit border px-4 py-2 rounded">Voltar</Link>
+            
             <h1>Exercicio 02</h1>
             <p>Counter com Histórico</p>
 
@@ -27,6 +30,15 @@ export default function Ex02() {
                 <button className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded" onClick={aumentar}>Aumentar</button>
                 <button className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded" onClick={diminuir}>Diminuir</button>
             </div>
+
+            <h3>Histórico</h3>
+            <ul>
+                {history.map((value, index) => (
+                    <li className="inline-block border px-4 py-2 rounded" key={index}>
+                        {value}
+                    </li>
+                ))}
+            </ul>
         </div>
     );
 }

@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import Link from "next/link";
 
 export default function Ex04() {
     const [email, setEmail] = useState('');
@@ -24,6 +25,8 @@ export default function Ex04() {
     
         return(
         <div className="p-8 flex flex-col gap-4">
+            <Link href="/" className="w-fit border px-4 py-2 rounded">Voltar</Link>
+
             <h1>Exercicio 04</h1>
             <p>Aqui tem um Formulário de Cadastro</p>
 
@@ -41,7 +44,7 @@ export default function Ex04() {
             onChange= {(e) => setSenha(e.target.value)}
             />
 
-            <button className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded" onClick={handleCadastro}>
+            <button className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded w-[500px]" onClick={handleCadastro}>
             Cadastrar
             </button>
         </div>
